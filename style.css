@@ -1,0 +1,28 @@
+body {
+    background-image: url(https://www.datocms-assets.com/11302/1571148686-orchestr-nd-foto-josef-rabara-2.jpg?w=1200&h=630&fit=crop);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: rgb(0, 0, 0);
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.container {
+    max-width: 1000px;
+    padding: 2%;
+    border-radius: 5%;
+    margin-top: 10%;
+    background-color: white;
+}
+
+img {
+    width: 500px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+footer {
+    text-align: center;
+}

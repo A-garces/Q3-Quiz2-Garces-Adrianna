@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <title>Q3 Quiz 2</title>
+    </head>
+    <body>
+
+        <div class="container">
+                <h1 class="p-2">Orchestra Ticket Center</h1>
+    
+            <!-- Personal Info -->
+            <div class="rounded border m-3 p-3">
+              
+                <details ontoggle="message()">
+                  <summary>Personal Information</summary>
+                     <I>Fill up the form below.</I>
+    
+                     <form>
+                        <div class="row mb-3">
+                          <label for="inputEmail" class="col-sm-2 col-form-label">Name:</label>
+                          <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Enter your name here">
+                          </div>
+                        </div>
+
+                        <div class="row mb-3">
+                          <label for="inputPassword" class="col-sm-2 col-form-label">Email Address:</label>
+                          <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="Enter your Email address here">
+                          </div>
+                        </div>
+    
+                    <button type="button" class="btn btn-dark mt-2" onclick="submitPInfo()" id="submit">Submit Info</button>
+                
+                </form>
+    
+                </details>
+            </div>
+    
+            <!-- Ticket Price -->
+            <div class="rounded border m-3 p-3">
+                <details ontoggle="message()">
+                  <summary>Ticket Seat</summary>
+                  <I>Choose your seat arrangement.</I>
+                  <br/>
+    
+                    <img src="https://i0.wp.com/mytheatreweekend.com/wp-content/uploads/2018/06/Belasco-Showing-All-Levels.jpg?fit=800%2C530&ssl=1" class="rounded mx-auto d-block" alt="orchestra seating">
+
+                  <label for="seat">Select your Seating:</label>
+                  <select id="seat" class="form-select" aria-label="Default select example">
+                    <option value="Orc">Orchestra</option>
+                    <option value="Mez">Mezzanine</option>
+                    <option value="Bal">Balcony</option>
+                    <option value="Box">Boxes</option>
+                  </select>
+    
+                <label for="option">Who are you paying as:</label>
+                  <select id="option" class="form-select" aria-label="Default select example">
+                    <option value="Gue">Guest</option>
+                    <option value="VIP">VIP</option>
+                  </select>
+<br/>
+                      <div class="mt-2">
+                        <button type="button" class="btn btn-dark" onclick="price()" id="">Order Ticket</button>
+                    </div>
+                </form>
+                </details>
+            </div>
+    
+            <!-- Print Ticket -->
+            <div class="rounded border m-3 p-3">
+                <details ontoggle="message()">
+                  <summary>Print Ticket</summary>
+    
+                  <img src="https://clipart-library.com/images_k/movie-ticket-transparent/movie-ticket-transparent-19.png" class="rounded mx-auto d-block" alt="ticket">
+    
+                  <form>
+                      <!-- print -->
+                    <button type="button" class="btn btn-dark mt-2 form-control" onclick="print()">Print Ticket</button>
+    
+                      <!-- buy more tickets -->
+                    <button type="button" class="btn btn-dark mt-2 form-control" onclick="window.location.reload()" id="buy">Order more Tickets</button>
+                  </form>
+                </details>
+            </div>
+    
+            <!-- footer -->
+           <footer>Adrianna Garces | 9-Sapphire</footer>
+            </div>
+        </div>
+    
+    
+    
+        <script>
+            
+            function submitPInfo() {
+                alert("Proceed to selection of ticket seat.");
+                return false;
+            }
+    
+            function price() {
+                const seat = document.getElementById("seat").value;
+                const option = document.getElementById("option").value;
+                let price = 0;
+    
+                if (seat === "Orc") {
+                    price = option === "Gue" ? 3000 : 4000;
+                } 
+                else if (seat === "Mez") {
+                    price = option === "Gue" ? 1500 : 2500;
+                }
+                else if (seat === "Bal") {
+                price = option === "Gue" ? 1000 : 2000;
+                }
+    
+                else if (seat === "Box") {
+                price = option === "Gue" ? 5000 : 6000;
+                }
+    
+                alert("Ticket Price: P" + price + ". Proceed to printing your ticket.");
+                return false;
+            }
+    
+            function print() {
+                alert("Check your email for your ticket. Thank you!");
+                return false;
+            }
+    
+        </script>
+          
+    </body>
